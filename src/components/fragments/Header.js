@@ -1,16 +1,26 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
+    textAlign: "center",
     color: theme.palette.text.secondary,
+  },
+  imageWrapper: {
+    // flexBasis: "50%",
+    //height: 0,
+    // paddingBottom: "100%",
+    // position: "relative",
+  },
+  img: {
+    // position: "absolute",
+    //  top: 0,
+    //  left: 0,
+    //  width: "100%",
+    // height: "100%",
+    // objectFit: "cover",
   },
 }));
 
@@ -18,13 +28,13 @@ export default function Header() {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Box elevation={3}  className={classes.paper}>header</Box>
-        </Grid>
-       
-      </Grid>
+    <div>
+      <div className={classes.imageWrapper}>
+        <img
+          className={classes.img}
+          src={`${process.env.PUBLIC_URL}/images/brandner/site-logo.png`}
+        />
+      </div>
     </div>
   );
 }
