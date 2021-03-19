@@ -2,10 +2,13 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+import InboxIcon from '@material-ui/icons/Inbox';
+import DraftsIcon from '@material-ui/icons/Drafts';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function ListItemLink(props) {
+  return <ListItem button component="a" {...props} />;
+}
 export default function Navbar() {
   const classes = useStyles();
 
@@ -26,21 +32,21 @@ export default function Navbar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            หน้าหลัก
-          </Typography>
-          <Typography variant="h6" className={classes.title}>
-            แนะนำหน่วยงาน
-          </Typography>
-          <Button color="inherit">Login</Button>
+        <List component="nav" >
+        <ListItem component="div" >
+         
+          <ListItemText inset  primary="หน้าหลัก" />
+          <ListItemText inset primary="โครงสร้าง" />
+          <ListItemText inset primary="วิสัยทัศน์-พันธกิจ" />
+          <ListItemText inset primary="ผู้บริหาร" />
+          <ListItemText inset primary="download" />
+          <ListItemText inset primary="km" />
+        </ListItem>
+      </List>
+      <Divider />
+     
+
+
         </Toolbar>
       </AppBar>
     </div>

@@ -10,9 +10,7 @@ import {
   makeStyles,
   ThemeProvider,
 } from "@material-ui/core/styles";
-
-export default function App() {
-  const theme = createMuiTheme({
+ const theme = createMuiTheme({
     palette: {
       primary: {
         main: "#62CCC0",
@@ -22,6 +20,8 @@ export default function App() {
       danger: "orange",
     },
   });
+export default function App() {
+ 
 
   return (
     <ThemeProvider theme={theme}>
